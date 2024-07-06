@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ausbilder- und Azubi-Filter</title>
+    <style>
+        th {
+            cursor: pointer;
+        }
+
+        .blacklisted {
+            color: red;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+        }
+
+        #classes {
+            width: 100%;
+            height: 50px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#studentsTable').DataTable();
+
+            window.toggleBlacklist = function (student_id, action) {
+                $.post(action, { student_id: student_id }, function (data) {
+                    if (data.status == 'success') {
+                        if (data.action == 'added') {
+                            $('tr[data-id="' + student_id + '"]').addClass('blacklisted').find('button').text('Von Blacklist entfernen').attr('onclick', 'toggleBlacklist("' + student_id + '", "/remove_from_blacklist")');
+                        } else {
+                            $('tr[data-id="' + student_id + '"]').removeClass('blacklisted').find('button').text('Zur Blacklist hinzufügen').attr('onclick', 'toggleBlacklist("' + student_id + '", "/add_to_blacklist")');
+                        }
+                        $('#blacklist').val(data.blacklist.join(','));
+
+                        // Aktualisiere die Klasse für alle Zeilen
+                        data.blacklist.forEach(function (id) {
+                            $('tr[data-id="' + id + '"]').addClass('blacklisted');
+                        });
+                        $('tr').not('.blacklisted').removeClass('blacklisted');
+                    }
+                }, 'json');
+            };
+        });
+    </script>
+</head>
+<body>
+    <h1>Ausbilder- und Azubi-Filter</h1>
+    <form action="{{ url_for('update_ini') }}" method="post">
+        <label for="classes">Klassen (Komma-Separiert):</label>
+        <textarea id="classes" name="classes">{{ ','.join(classes) }}</textarea>
+        <br>
+        <button type="submit">INI-Datei mit Klassen aktualisieren</button>
+        <br><br>
+        <label for="blacklist">Blacklist IDs (Komma-Separiert):</label>
+        <textarea id="blacklist" name="blacklist">{{ ','.join(blacklist) }}</textarea>
+        <br>
+        <a href="{{ url_for('filter_csv') }}">
+            <button type="button">CSV-Datei filtern</button>
+        </a>
+    </form>
+
+    <h2>Schüler</h2>
+    <table id="studentsTable" class="display">
+        <thead>
+            <tr>
+                <th>Interne ID-Nummer</th>
+                <th>Vorname</th>
+                <th>Nachname</th>
+                <th>Klasse</th>
+                <th>Aktion</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr data-id="{{ student['Interne ID-Nummer'] }}" class="{% if student['Interne ID-Nummer']|string in blacklist %}blacklisted{% endif %}">
+                <td>{{ student['Interne ID-Nummer'] }}</td>
+                <td>{{ student['Vorname'] }}</td>
+                <td>{{ student['Nachname'] }}</td>
+                <td>{{ student['Klasse'] }}</td>
+                <td>
+                    {% if student['Interne ID-Nummer']|string in blacklist %}
+                    <button onclick="toggleBlacklist('{{ student['Interne ID-Nummer'] }}', '/remove_from_blacklist')">Von Blacklist entfernen</button>
+                    {% else %}
+                    <button onclick="toggleBlacklist('{{ student['Interne ID-Nummer'] }}', '/add_to_blacklist')">Zur Blacklist hinzufügen</button>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

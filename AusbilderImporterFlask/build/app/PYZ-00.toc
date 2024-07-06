@@ -1,0 +1,2 @@
+('C:\\Users\\Christoph\\source\\repos\\AusbilderImporterFlask\\AusbilderImporterFlask\\build\\app\\PYZ-00.pyz',
+ [])
