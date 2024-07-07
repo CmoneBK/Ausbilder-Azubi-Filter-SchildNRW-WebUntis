@@ -77,9 +77,10 @@
         <label for="blacklist">Blacklist IDs (Komma-Separiert und ohne Leerzeichen):</label>
         <textarea id="blacklist" name="blacklist">{{ ','.join(blacklist) }}</textarea>
         <br>
-        <a href="{{ url_for('filter_csv') }}">
-            <button type="button">CSV-Datei filtern und ausgeben (Unterverzeichnis: AusbilderImportDatei)</button>
-        </a>
+        <label for="open_explorer">Öffne das Verzeichnis nach dem Generieren der Output-Datei:</label>
+        <input type="checkbox" id="open_explorer" name="open_explorer">
+        <br>
+        <button type="button" onclick="filterCsv()">CSV-Datei filtern und ausgeben (Unterverzeichnis: AusbilderImportDatei)</button>
     </form>
 
     <h2>Schülerinnen und Schüler</h2>
@@ -112,5 +113,12 @@
         </tbody>
     </table>
     {% endif %}
+
+    <script>
+        function filterCsv() {
+            var openExplorer = document.getElementById('open_explorer').checked;
+            window.location.href = "{{ url_for('filter_csv') }}?open_explorer=" + openExplorer;
+        }
+    </script>
 </body>
 </html>

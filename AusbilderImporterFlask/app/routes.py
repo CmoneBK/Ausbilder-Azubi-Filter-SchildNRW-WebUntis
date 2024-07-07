@@ -8,6 +8,7 @@ from datetime import datetime
 from flask import render_template, request, redirect, url_for, jsonify, flash, session
 from werkzeug.utils import secure_filename
 from app import app, cache
+import subprocess
 
 logging.debug("routes.py loaded")
 
@@ -25,7 +26,7 @@ def read_ini_file(ini_path):
     if 'Classes' not in config['FILTER']:
         raise KeyError("Classes key not found in FILTER section of config.ini")
 
-    classes = config['FILTER']['Classes'].split(',')
+    classes = config['FILTER']['Classes'].split(',') if config['FILTER']['Classes'] else []
     blacklist = [str(id).strip() for id in config['BLACKLIST']['IDs'].split(',')] if 'BLACKLIST' in config and 'IDs' in config['BLACKLIST'] and config['BLACKLIST']['IDs'] else []
     logging.debug(f"Read classes: {classes}")
     logging.debug(f"Read blacklist: {blacklist}")
@@ -64,12 +65,14 @@ def filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_pat
     encoding = detect_encoding(csv_path)
     df = pd.read_csv(csv_path, delimiter=';', encoding=encoding)
     logging.debug(f"CSV columns: {df.columns}")
+    
+    if classes:
+        df = df[df['Klasse'].isin(classes)]
     if blacklist:
-        filtered_df = df[df['Klasse'].isin(classes) & ~df['Interne ID-Nummer'].astype(str).isin(blacklist)]
-    else:
-        filtered_df = df[df['Klasse'].isin(classes)]
+        df = df[~df['Interne ID-Nummer'].astype(str).isin(blacklist)]
+    
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    filtered_df.to_csv(output_path, index=False, sep=';', encoding='utf-8-sig')
+    df.to_csv(output_path, index=False, sep=';', encoding='utf-8-sig')
     logging.debug(f"Filtered CSV saved to {output_path}")
 
 @app.route('/')
@@ -136,8 +139,13 @@ def filter_csv():
         return redirect(url_for('index'))
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = os.path.join(os.getcwd(), 'AusbilderImportDatei', f'WebUntis_Ausbilder_Import_{timestamp}.csv')
+    output_dir = os.path.join(os.getcwd(), 'AusbilderImportDatei')
+    output_path = os.path.join(output_dir, f'WebUntis_Ausbilder_Import_{timestamp}.csv')
     filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_path)
+    
+    if request.args.get('open_explorer') == 'true':
+        subprocess.Popen(f'explorer "{output_dir}"')
+    
     flash("Die CSV Datei wurde gefiltert und im Unterverzeichnis AusbilderImportDatei mit Datums- und Uhrzeitangaben gespeichert!")
     return redirect(url_for('index'))
 
