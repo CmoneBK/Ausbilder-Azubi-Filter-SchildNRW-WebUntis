@@ -27,7 +27,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
 ## Installation und Nutzung
 
-1. **Download und Installation**: Laden Sie die ausführbare Datei (`run.exe`) herunter und speichern Sie sie in einem Verzeichnis Ihrer Wahl.
+1. **Download und Installation**: Laden Sie die ausführbare Datei (`AusbilderImporter.exe`) herunter und speichern Sie sie in einem Verzeichnis Ihrer Wahl.  [AusbilderImporter.exe herunterladen](AusbilderImporterFlask/dist/AusbilderImporter.exe)
 2. **Starten der Anwendung**: Doppelklicken Sie auf `run.exe`. Die Anwendung erstellt automatisch eine `config.ini`-Datei, falls diese nicht vorhanden ist, und öffnet die Webanwendung im Standardbrowser.
 3. **CSV-Datei hochladen**: Laden Sie über die Weboberfläche eine CSV-Datei hoch, die die Schülerdaten enthält.
 4. **Konfigurieren der Klassen und Blacklist**: Verwenden Sie die Weboberfläche, um Klassen festzulegen und Schüler auf die Blacklist zu setzen.
