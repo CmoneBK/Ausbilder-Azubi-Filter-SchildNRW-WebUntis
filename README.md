@@ -8,9 +8,9 @@ Dieses Programm wurde entwickelt, um Berufskollegs in Nordrhein-Westfalen (NRW) 
 
 In NRW erlaubt die Verordnung über die zur Verarbeitung zugelassenen Daten von Schülerinnen, Schülern und Eltern (VO DVI) zur Kommunikation von Abwesenheitsdaten von Berufskollegs an Ausbilder nur [die Übermittlung unentschuldigter Fehlstunden](https://bass.schul-welt.de/101.htm#:~:text=4.%20Erreichbarkeit%2C-,5.%20Angaben%20zu%20unentschuldigten%20Schulvers%C3%A4umnissen.,-(5)%20Zur%20Organisation).
 
-Dies erfolgt auf der rechtlichen Grundlage von DSGVO Artikel 6 Abs. 1 Satz 1 Buchstabe e, Abs. 3 und Artikel 9 Abs. 2 Buchstabe g.
+[Dies erfolgt auf der rechtlichen Grundlage von DSGVO Artikel 6 Abs. 1 Satz 1 Buchstabe e, Abs. 3 und Artikel 9 Abs. 2 Buchstabe g.](https://bass.schul-welt.de/101.htm#:~:text=Nach%20Artikel%206%20Abs.%201%20Satz%201%20Buchstabe%20e%2C%20Abs.%203%20und%20Artikel%209%20Abs.%202%20Buchstabe%20g)
 
-Für alle anderen Daten, wie entschuldigte Fehlzeiten, ist eine ausdrückliche Zustimmung des Schülers erforderlich, gemäß Artikel 6 Buchstabe a oder b der DSGVO. (Grundsätze der Artikel 5, 6, 7, 9 sind in der VO DVI ebenfalls als geltendes Recht erwähnt.)
+Für alle anderen Daten, wie entschuldigte Fehlzeiten, ist eine ausdrückliche Zustimmung des Schülers erforderlich, gemäß Artikel 6 Buchstabe a oder b der DSGVO. [Grundsätze der Artikel 5, 6, 7, 9 sind in der VO DVI ebenfalls als geltendes Recht erwähnt.](https://bass.schul-welt.de/101.htm#:~:text=insbesondere,6%2C%207%2C%209)
 
 Ein Problem entsteht, weil WebUntis zur Anzeige für Ausbildungsbeauftragte derzeit nicht zwischen unentschuldigten und entschuldigten Fehlzeiten unterscheiden kann und die Ausbilder über die Schülerstammdaten importiert werden. Dadurch erhalten Ausbilder zwangsläufig Zugriff auf die Abwesenheitsdaten aller Schüler im Datensatz, auch wenn nicht alle Schüler zugestimmt haben. Dies führt zu einem Datenschutzproblem.
 
