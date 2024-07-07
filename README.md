@@ -20,7 +20,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
 ## Grundfunktionen
 
-- **CSV-Import**: Laden Sie eine CSV-Datei hoch, die die Schülerdaten enthält.
+- **CSV-Import**: Laden Sie eine CSV-Datei in das Verzeichnis der App oder über das WebEnd hoch, die die Schülerdaten enthält.
 - **Blacklist**: Setzen Sie Schüler, die nicht zugestimmt haben, auf eine Blacklist.
 - **Klassenfilter**: Begrenzen Sie den Import auf bestimmte Klassen.
 - **CSV-Export**: Exportieren Sie die gefilterten Daten in eine neue CSV-Datei mit Datums- und Uhrzeitangaben im Dateinamen.
