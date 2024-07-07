@@ -53,7 +53,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 4. Exportieren Sie eine Datei zum Testen
 5. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
    - Erste Zeile ignorieren: Ja
-   - Schülerverbindung additiv importieren: Nein (außer Sie wollen das)
+   - Schülerverbindung additiv importieren: Nein (ein Ja würde dazu führen, dass neue Einträge auf der Blacklist nicht entfernt werden)
    - Identifikation des Ausbildungsbeauftragten: automatisch
    
    Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (sie können dennoch zur automatischen Identifikation einen Nutzen haben).
