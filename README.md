@@ -27,16 +27,18 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
 ## Vor der Installation
 
-1. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
-2. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
-   - Allg. Adresse: Betreuer Titel
-   - Allg. Adresse: Betreuer E-Mail
-   - Allg. Adresse: Betreuer Name
-   - Allg. Adresse: Betreuer Vorname
-   - Allg. Adresse: Fax-Nr.
-   - Allg. Adresse: Betreuer Anrede
-   - Allg. Adresse: Betreuer Telefon
-   - Allg. Adresse: Betreuer Abteilung
+1. Sorgen Sie dafür, dass in SchildNRW im Datensatz für Betreuer bei allen im aktuellen Schuljahr Aktiven, Abgägern und Abschlüssen ordentlich gepflegt ist:
+   - Betreuer dürfen nur in einer Schreibweise und mit allen korrekt ausgefüllten Namensfeldern und dem E-Mail Feld vorkommen. Auch die Anrede wird benötigt. Wenn Sie die Daten überarbeiten füllen Sie am Besten ALLE Felder.
+2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
+3. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
+   - Allg. Adresse: Betreuer Titel 
+   - Allg. Adresse: Betreuer E-Mail (Wird von WebUntis benötigt)
+   - Allg. Adresse: Betreuer Name (Wird von WebUntis benötigt)
+   - Allg. Adresse: Betreuer Vorname (Wird von WebUntis benötigt)
+   - Allg. Adresse: Fax-Nr. (Kann von WebUntis zur Identifikation genutzt werden)
+   - Allg. Adresse: Betreuer Anrede (Wird von WebUntis benötigt)
+   - Allg. Adresse: Betreuer Telefon (Kann von WebUntis zur Identifikation genutzt werden)
+   - Allg. Adresse: Betreuer Abteilung (Kann von WebUntis zur Identifikation genutzt werden)
    - Allg. Adresse: Name1
    - Interne ID-Nummer    (Wird von der APP und WebUntis Benötigt)
    - Nachname             (Wird von der APP Benötigt)
@@ -44,8 +46,8 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Klasse               (Wird von der APP Benötigt)
 
    Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell Alle Typen auswählen und die Endung .csv anfügen)
-3. Exportieren Sie eine Datei zum Testen
-4. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
+4. Exportieren Sie eine Datei zum Testen
+5. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
    - Erste Zeile ignorieren: Ja
    - Schülerverbindung additiv importieren: Nein (außer Sie wollen das)
    - Identifikation des Ausbildungsbeauftragten: automatisch
