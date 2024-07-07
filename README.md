@@ -25,13 +25,38 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 - **Klassenfilter**: Begrenzen des Imports auf bestimmte Klassen.
 - **CSV-Export**: Exportieren der gefilterten Daten in eine neue CSV-Datei mit Datums- und Uhrzeitangaben im Dateinamen.
 
+## Vor der Installation
+
+1. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
+2. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
+   Allg. Adresse: Betreuer Titel
+   Allg. Adresse: Betreuer E-Mail
+   Allg. Adresse: Betreuer Name
+   Allg. Adresse: Betreuer Vorname
+   Allg. Adresse: Fax-Nr.
+   Allg. Adresse: Betreuer Anrede
+   Allg. Adresse: Betreuer Telefon
+   Allg. Adresse: Betreuer Abteilung
+   Allg. Adresse: Name1
+   Interne ID-Nummer
+   Nachname
+   Vorname
+   Klasse
+
+   Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell Alle Typen auswählen und die Endung .csv anfügen)
+3. Exportieren Sie eine Datei zum Testen
+4. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
+   Erste Zeile ignorieren: Ja
+   Schülerverbindung additiv importieren: Nein (außer Sie wollen das)
+   Identifikation des Ausbildungsbeauftragten: automatisch
+
 ## Installation und Nutzung
 
-1. **Download und Installation**: Laden Sie die ausführbare Datei (`AusbilderImporter.exe`) herunter und speichern Sie sie in einem Verzeichnis Ihrer Wahl.  [AusbilderImporter.exe herunterladen](AusbilderImporterFlask/dist/AusbilderImporter.exe)
-2. **Starten der Anwendung**: Doppelklicken Sie auf `run.exe`. Die Anwendung erstellt automatisch eine `config.ini`-Datei, falls diese nicht vorhanden ist, und öffnet die Webanwendung im Standardbrowser.
+1. **Download und Installation**: Laden Sie die ausführbare Datei (`AusbilderImporter.exe`) herunter und speichern Sie sie in einem Verzeichnis Ihrer Wahl.  [AusbilderImporter.exe herunterladen (Downloadbutton dann oben rechts)](AusbilderImporterFlask/dist/AusbilderImporter.exe)
+2. **Starten der Anwendung**: Doppelklicken Sie auf `AusbilderImporter.exe`. Die Anwendung erstellt automatisch eine `config.ini`-Datei, falls diese nicht vorhanden ist, und öffnet die Webanwendung im Standardbrowser.
 3. **CSV-Datei hochladen**: Laden Sie über die Weboberfläche eine CSV-Datei hoch, die die Schülerdaten enthält.
-4. **Konfigurieren der Klassen und Blacklist**: Verwenden Sie die Weboberfläche, um Klassen festzulegen und Schüler auf die Blacklist zu setzen.
-5. **CSV-Datei filtern**: Klicken Sie auf den Button "CSV-Datei filtern", um die gefilterten Daten zu exportieren.
+4. **Konfigurieren der Klassen und Blacklist**: Verwenden Sie die Weboberfläche, um Klassen festzulegen und Schüler auf die Blacklist zu setzen. (Keine Klassen = Kein Klassenfilter)
+5. **CSV-Datei filtern**: Klicken Sie auf den Button "CSV-Datei filtern und ausgeben", um die gefilterten Daten zu exportieren. Sie werden im Unterverzeichnis AusbilderImportDateien gespeichert.
 
 ## Beispielhafte `config.ini`
 
