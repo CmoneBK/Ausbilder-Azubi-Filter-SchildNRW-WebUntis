@@ -29,19 +29,19 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
 1. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
 2. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
-   Allg. Adresse: Betreuer Titel
-   Allg. Adresse: Betreuer E-Mail
-   Allg. Adresse: Betreuer Name
-   Allg. Adresse: Betreuer Vorname
-   Allg. Adresse: Fax-Nr.
-   Allg. Adresse: Betreuer Anrede
-   Allg. Adresse: Betreuer Telefon
-   Allg. Adresse: Betreuer Abteilung
-   Allg. Adresse: Name1
-   Interne ID-Nummer
-   Nachname
-   Vorname
-   Klasse
+   - Allg. Adresse: Betreuer Titel
+   - Allg. Adresse: Betreuer E-Mail
+   - Allg. Adresse: Betreuer Name
+   - Allg. Adresse: Betreuer Vorname
+   - Allg. Adresse: Fax-Nr.
+   - Allg. Adresse: Betreuer Anrede
+   - Allg. Adresse: Betreuer Telefon
+   - Allg. Adresse: Betreuer Abteilung
+   - Allg. Adresse: Name1
+   - Interne ID-Nummer
+   - Nachname
+   - Vorname
+   - Klasse
 
    Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell Alle Typen auswählen und die Endung .csv anfügen)
 3. Exportieren Sie eine Datei zum Testen
