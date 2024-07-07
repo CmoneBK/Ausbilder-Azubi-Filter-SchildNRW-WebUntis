@@ -28,6 +28,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app\routes Sicherung.py" />
+    <Compile Include="app\routes2.py" />
     <Compile Include="app\routes.py">
       <SubType>Code</SubType>
     </Compile>
@@ -51,6 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\data\AusbilderExport.csv" />
+    <Content Include="app\templates\index Sicherung.html" />
+    <Content Include="app\templates\index - Copy.html" />
+    <Content Include="app\templates\index.html" />
+    <Content Include="app\templates\upload.html" />
     <Content Include="config.ini" />
     <Content Include="requirements.txt" />
     <Content Include="app\static\content\bootstrap.css" />
@@ -77,7 +83,7 @@
     <Content Include="app\static\scripts\_references.js" />
     <Content Include="app\templates\about.html" />
     <Content Include="app\templates\contact.html" />
-    <Content Include="app\templates\index.html" />
+    <Content Include="app\templates\index2.html" />
     <Content Include="app\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>

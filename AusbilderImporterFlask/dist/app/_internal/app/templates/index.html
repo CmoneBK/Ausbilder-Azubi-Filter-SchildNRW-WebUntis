@@ -52,21 +52,37 @@
 </head>
 <body>
     <h1>Ausbilder- und Azubi-Filter</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    {% if not students %}
+    <form action="{{ url_for('upload_file') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    {% else %}
     <form action="{{ url_for('update_ini') }}" method="post">
-        <label for="classes">Klassen (Komma-Separiert):</label>
+        <label for="classes">Zu berücksichtigende Klassen (Komma-Separiert und ohne Leerzeichen):</label>
         <textarea id="classes" name="classes">{{ ','.join(classes) }}</textarea>
         <br>
         <button type="submit">INI-Datei mit Klassen aktualisieren</button>
         <br><br>
-        <label for="blacklist">Blacklist IDs (Komma-Separiert):</label>
+        <label for="blacklist">Blacklist IDs (Komma-Separiert und ohne Leerzeichen):</label>
         <textarea id="blacklist" name="blacklist">{{ ','.join(blacklist) }}</textarea>
         <br>
         <a href="{{ url_for('filter_csv') }}">
-            <button type="button">CSV-Datei filtern</button>
+            <button type="button">CSV-Datei filtern und ausgeben (Unterverzeichnis: AusbilderImportDatei)</button>
         </a>
     </form>
 
-    <h2>Schüler</h2>
+    <h2>Schülerinnen und Schüler</h2>
     <table id="studentsTable" class="display">
         <thead>
             <tr>
@@ -95,5 +111,6 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endif %}
 </body>
 </html>

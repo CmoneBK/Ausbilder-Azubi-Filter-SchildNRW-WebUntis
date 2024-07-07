@@ -7,15 +7,18 @@ a = Analysis(
     ['run.py'],
     pathex=['.'],
     binaries=[],
-    datas=[('app/templates', 'app/templates'), ('app/static', 'app/static'), ('config.ini', '.')],
-    hiddenimports=['pandas', 'configparser', 'flask', 'flask_caching', 'chardet'],  # Add any hidden imports here
+    datas=[
+        ('app/templates', 'app/templates'),
+        ('app/static', 'app/static'),
+        ('config.ini', '.'),
+    ],
+    hiddenimports=['flask', 'flask_caching', 'pandas', 'configparser', 'chardet'],
     hookspath=[],
     runtime_hooks=[],
     excludes=[],
     win_no_prefer_redirects=False,
     win_private_assemblies=False,
-    cipher=block_cipher,
-    noarchive=True  # This will disable archive, useful for debugging
+    cipher=block_cipher
 )
 
 pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
@@ -26,7 +29,7 @@ exe = EXE(
     [],
     exclude_binaries=True,
     name='app',
-    debug=True,  # Enable debug
+    debug=True,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
@@ -44,4 +47,11 @@ coll = COLLECT(
     upx=True,
     upx_exclude=[],
     name='app'
+)
+
+app = BUNDLE(
+    coll,
+    name='app',
+    console=True,
+    onefile=True  # Equivalent to --onefile
 )

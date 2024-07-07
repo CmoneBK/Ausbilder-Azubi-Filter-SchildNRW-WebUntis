@@ -4,17 +4,29 @@ import glob
 import os
 import chardet
 import logging
-from flask import render_template, request, redirect, url_for, jsonify
+from datetime import datetime
+from flask import render_template, request, redirect, url_for, jsonify, flash, session
+from werkzeug.utils import secure_filename
 from app import app, cache
 
 logging.debug("routes.py loaded")
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'csv'}
 
 def read_ini_file(ini_path):
     logging.debug(f"Reading INI file from {ini_path}")
     config = configparser.ConfigParser()
     config.read(ini_path)
+    logging.debug(f"Sections found in config: {config.sections()}")
+
+    if 'FILTER' not in config:
+        raise KeyError("FILTER section not found in config.ini")
+    if 'Classes' not in config['FILTER']:
+        raise KeyError("Classes key not found in FILTER section of config.ini")
+
     classes = config['FILTER']['Classes'].split(',')
-    blacklist = [str(id).strip() for id in config['BLACKLIST']['IDs'].split(',')] if 'IDs' in config['BLACKLIST'] and config['BLACKLIST']['IDs'] else []
+    blacklist = [str(id).strip() for id in config['BLACKLIST']['IDs'].split(',')] if 'BLACKLIST' in config and 'IDs' in config['BLACKLIST'] and config['BLACKLIST']['IDs'] else []
     logging.debug(f"Read classes: {classes}")
     logging.debug(f"Read blacklist: {blacklist}")
     return classes, blacklist
@@ -60,26 +72,29 @@ def filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_pat
     filtered_df.to_csv(output_path, index=False, sep=';', encoding='utf-8-sig')
     logging.debug(f"Filtered CSV saved to {output_path}")
 
-@cache.cached(timeout=300)
 @app.route('/')
 def index():
     logging.debug("Index route accessed")
-    ini_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'config.ini')
+    ini_path = os.path.join(os.getcwd(), 'config.ini')
     classes, blacklist = read_ini_file(ini_path)
-    csv_path = get_latest_csv(os.getcwd())  # Look for CSV files in the current directory
+    csv_path = get_latest_csv(os.getcwd()) or session.get('uploaded_csv')  # Suche nach CSV-Dateien im aktuellen Verzeichnis oder Upload-Verzeichnis
+
     students = []
-    if (csv_path):
+    if csv_path:
         encoding = detect_encoding(csv_path)
         df = pd.read_csv(csv_path, delimiter=';', encoding=encoding)
         df = df.sort_values(by=['Klasse', 'Nachname'])
         df['Interne ID-Nummer'] = df['Interne ID-Nummer'].astype(str)
         students = df[['Interne ID-Nummer', 'Vorname', 'Nachname', 'Klasse']].to_dict(orient='records')
+    else:
+        flash("Keine CSV Datei gefunden. Bitte laden Sie eine CSV-Datei hoch.")
+    
     return render_template('index.html', classes=classes, blacklist=blacklist, students=students)
 
 @app.route('/update_ini', methods=['POST'])
 def update_ini():
     logging.debug("Update INI route accessed")
-    ini_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'config.ini')
+    ini_path = os.path.join(os.getcwd(), 'config.ini')
     new_classes = request.form.get('classes').split(',')
     new_blacklist = request.form.get('blacklist').split(',')
     write_ini_file(ini_path, new_classes, new_blacklist)
@@ -89,7 +104,7 @@ def update_ini():
 @app.route('/add_to_blacklist', methods=['POST'])
 def add_to_blacklist():
     logging.debug("Add to blacklist route accessed")
-    ini_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'config.ini')
+    ini_path = os.path.join(os.getcwd(), 'config.ini')
     student_id = request.form.get('student_id')
     classes, blacklist = read_ini_file(ini_path)
     if student_id not in blacklist:
@@ -101,7 +116,7 @@ def add_to_blacklist():
 @app.route('/remove_from_blacklist', methods=['POST'])
 def remove_from_blacklist():
     logging.debug("Remove from blacklist route accessed")
-    ini_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'config.ini')
+    ini_path = os.path.join(os.getcwd(), 'config.ini')
     student_id = request.form.get('student_id')
     classes, blacklist = read_ini_file(ini_path)
     if student_id in blacklist:
@@ -113,13 +128,35 @@ def remove_from_blacklist():
 @app.route('/filter_csv')
 def filter_csv():
     logging.debug("Filter CSV route accessed")
-    base_dir = os.getcwd()  # Look for CSV files in the current directory
-    csv_path = get_latest_csv(base_dir)
-    if not csv_path:
-        return 'No CSV files found in the directory.'
-    
-    ini_path = os.path.join(base_dir, 'config.ini')
+    ini_path = os.path.join(os.getcwd(), 'config.ini')
     classes, blacklist = read_ini_file(ini_path)
-    output_path = os.path.join(base_dir, 'AusbilderImportDatei', 'filtered_output.csv')
+    csv_path = get_latest_csv(os.getcwd()) or session.get('uploaded_csv')
+    if not csv_path:
+        flash("Keine CSV Datei gefunden. Bitte laden Sie eine CSV-Datei hoch.")
+        return redirect(url_for('index'))
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = os.path.join(os.getcwd(), 'AusbilderImportDatei', f'WebUntis_Ausbilder_Import_{timestamp}.csv')
     filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_path)
-    return 'CSV file filtered and saved!'
+    flash("Die CSV Datei wurde gefiltert und im Unterverzeichnis AusbilderImportDatei mit Datums- und Uhrzeitangaben gespeichert!")
+    return redirect(url_for('index'))
+
+@app.route('/upload_file', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(file_path)
+            flash('Datei erfolgreich hochgeladen')
+            # Store the uploaded file path in session
+            session['uploaded_csv'] = file_path
+            return redirect(url_for('index'))
+    return render_template('upload.html')
