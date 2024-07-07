@@ -16,9 +16,11 @@ Für alle anderen Daten, wie entschuldigte Fehlzeiten, ist eine ausdrückliche Z
 
 Probleme entstehen, weil WebUntis zur Anzeige von Fehlzeiten für Ausbildungsbeauftragte derzeit nicht zwischen unentschuldigten und entschuldigten Fehlzeiten unterscheidet und die Ausbilder über die Schülerstammdaten importiert werden. Dadurch erhalten Ausbilder zwangsläufig Zugriff auf die Abwesenheitsdaten aller ihnen so zuogeordneten Schülerinnnen und Schüler im Datensatz, auch wenn nicht alle Schüler zugestimmt haben. Dies führt zu einem Datenschutzproblem.
 
-Um dieses Problem zu lösen, müsste entweder manuell in SCHILD NRW gefiltert werden, was sehr umständlich ist, oder der Ausbilder müsste auf alle Daten verzichten, was nicht praktikabel ist.
+Um dieses Problem zu lösen, müsste entweder manuell in SCHILD NRW gefiltert werden, was sehr umständlich sein kann*, oder der Ausbilder müsste auf alle Daten verzichten, was nicht praktikabel ist.
 
 Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Schüler, die nicht zugestimmt haben, auf eine Blacklist zu setzen und den Import auf bestimmte Klassen zu beschränken (insbesondere nützlich für Probephasen).
+
+*In SchildNRW gibt es die Checkbox " ". Wenn Sie diese auch in der Vergangenheit nie genutzt haben (Datenkonsistenz), nutzen Sie diese gerne hierfür. Sie brauchen hier dann nicht mehr weiterlesen. Wenn Sie oder Ihr Sekretariat diese Checkbox jedoch jemals für etwas anderes genutzt hat sind Sie in der selben Situation wie der Ersteller dieses Programms :). 
 
 ## Grundfunktionen
 
