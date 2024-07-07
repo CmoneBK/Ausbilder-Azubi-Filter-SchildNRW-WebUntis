@@ -47,4 +47,3 @@ Diese Datei wird automatisch erstellt, wenn sie nicht vorhanden ist, und kann ü
 
  ## Rechtliche Hinweise
 Dieses Programm wurde entwickelt, um Berufskollegs dabei zu unterstützen, die Anforderungen der DSGVO zu erfüllen. Bitte stellen Sie sicher, dass Sie die rechtlichen Anforderungen Ihrer spezifischen Situation kennen und einhalten.
-Stellen Sie sicher, dass Sie diese Datei in Visual Studio in Ihrem Projekt als `README.md` speichern. Diese Datei wird dann auf GitHub korrekt formatiert angezeigt.
