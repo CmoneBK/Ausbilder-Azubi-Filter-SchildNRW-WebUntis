@@ -49,8 +49,10 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Erste Zeile ignorieren: Ja
    - Schülerverbindung additiv importieren: Nein (außer Sie wollen das)
    - Identifikation des Ausbildungsbeauftragten: automatisch
+   
    Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (sie können dennoch zur automatischen Identifikation einen Nutzen haben).
    In jedem Fall benötigt werden:
+   
    - Allg. Adresse: Betreuer Vorname --> Vorname (Grunddaten)
    - Allg. Adresse: Betreuer Name --> Nachname (Grunddaten)
    - Interne ID-Nummer --> Schlüssel (intern, Schüler) (Zentral zur Identifikation)
