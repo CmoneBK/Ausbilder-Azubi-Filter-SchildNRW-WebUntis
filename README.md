@@ -83,3 +83,4 @@ Diese Datei wird automatisch erstellt, wenn sie nicht vorhanden ist, und kann ü
 
  ## Rechtliche Hinweise
 Dieses Programm wurde entwickelt, um Berufskollegs dabei zu unterstützen, die Anforderungen der VO DVI und DSGVO zu erfüllen. Bitte stellen Sie sicher, dass Sie die rechtlichen Anforderungen Ihrer spezifischen Situation kennen und einhalten.
+Ich übernehme keinerlei Haftung für das, was Sie mit diesem Tool tun.
