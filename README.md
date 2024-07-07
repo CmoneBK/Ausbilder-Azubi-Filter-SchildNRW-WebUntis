@@ -38,17 +38,23 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Allg. Adresse: Betreuer Telefon
    - Allg. Adresse: Betreuer Abteilung
    - Allg. Adresse: Name1
-   - Interne ID-Nummer
-   - Nachname
-   - Vorname
-   - Klasse
+   - Interne ID-Nummer    (Wird von der APP und WebUntis Benötigt)
+   - Nachname             (Wird von der APP Benötigt)
+   - Vorname              (Wird von der APP Benötigt)
+   - Klasse               (Wird von der APP Benötigt)
 
    Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell Alle Typen auswählen und die Endung .csv anfügen)
 3. Exportieren Sie eine Datei zum Testen
 4. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
-   Erste Zeile ignorieren: Ja
-   Schülerverbindung additiv importieren: Nein (außer Sie wollen das)
-   Identifikation des Ausbildungsbeauftragten: automatisch
+   - Erste Zeile ignorieren: Ja
+   - Schülerverbindung additiv importieren: Nein (außer Sie wollen das)
+   - Identifikation des Ausbildungsbeauftragten: automatisch
+   Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (sie können dennoch zur automatischen Identifikation einen Nutzen haben).
+   In jedem Fall benötigt werden:
+   - Allg. Adresse: Betreuer Vorname --> Vorname (Grunddaten)
+   - Allg. Adresse: Betreuer Name --> Nachname (Grunddaten)
+   - Interne ID-Nummer --> Schlüssel (intern, Schüler) (Zentral zur Identifikation)
+   - Allg. Adresse: Betreuer Anrede --> Titel (Darstellung des Namens in WebUntis in machen Bereichen sonst unvorteilhaft)
 
 ## Installation und Nutzung
 
