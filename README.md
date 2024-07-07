@@ -82,4 +82,4 @@ IDs=12345,67890
 Diese Datei wird automatisch erstellt, wenn sie nicht vorhanden ist, und kann über die Weboberfläche bearbeitet werden.
 
  ## Rechtliche Hinweise
-Dieses Programm wurde entwickelt, um Berufskollegs dabei zu unterstützen, die Anforderungen der DSGVO zu erfüllen. Bitte stellen Sie sicher, dass Sie die rechtlichen Anforderungen Ihrer spezifischen Situation kennen und einhalten.
+Dieses Programm wurde entwickelt, um Berufskollegs dabei zu unterstützen, die Anforderungen der VO DVI und DSGVO zu erfüllen. Bitte stellen Sie sicher, dass Sie die rechtlichen Anforderungen Ihrer spezifischen Situation kennen und einhalten.
