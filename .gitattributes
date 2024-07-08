@@ -58,3 +58,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 AusbilderImporter.exe filter=lfs diff=lfs merge=lfs -text
+Ausbilder-Azubi-Filter-SchildNRW-WebUntis.exe filter=lfs diff=lfs merge=lfs -text
