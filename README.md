@@ -58,13 +58,13 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
      
 2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
 
-    Dabei ist es besonders wichtig Abgägner und Abschlüsse oder ausgetragene Adressen zu erfassen, damit beim späteren Import die Zuweisung zum Ausbilder auch wieder entfernt wird.
+    Dabei ist es besonders wichtig Abgägner und Abschlüsse und idealerweise auch ausgetragene Adressen zu erfassen, damit bei diesen beim späteren Import die Zuweisung zum Ausbilder auch wieder entfernt wird.
   
-    - Beispiel 1 ( Filter Typ I) (sofern letzter Punkt gepflegt):
+    - Beispiel 1 (Filter Typ I) (sofern letzter Punkt gepflegt):
   
     Laufbahn-Schuljahr: Aktuelles; Status: Aktiv, Abgang, Abschluss; (Unter Weitere Daten:) Weitere Adressen-Beschäftigungsart: Auszubildener 
   
-    - Beispiel 2 (Filter Typ II (SQL)) :
+    - Beispiel 2 (Filter Typ II (SQL)):
 
         Variante A: (Prüft, ob eine Adresse im Reiter Adressen/Betriebe vorhanden ist)
         <pre>
@@ -113,20 +113,20 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
      Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell als Dateityp "Alle Dateien (*.*)" auswählen und die Endung .csv anfügen)
    
-4. Exportieren Sie eine Datei zum Testen
+4. Exportieren Sie eine Datei zum Testen.
    
 5. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
    - Erste Zeile ignorieren: Ja
-   - Schülerverbindung additiv importieren: Nein (ein Ja würde dazu führen, dass neue Einträge auf der Blacklist nicht entfernt werden)
+   - Schülerverbindung additiv importieren: Nein (ein Ja würde dazu führen, dass neue Einträge auf der Blacklist nicht entfernt werden bzw. leere Einträge vorhandene nicht überschreiben)
    - Identifikation des Ausbildungsbeauftragten: automatisch
    
    Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (sie können dennoch zur automatischen Identifikation einen Nutzen haben).
    In jedem Fall benötigt werden:
    
-   - Allg. Adresse: Betreuer Vorname --> Vorname (Grunddaten)
-   - Allg. Adresse: Betreuer Name --> Nachname (Grunddaten)
-   - Interne ID-Nummer --> Schlüssel (intern, Schüler) (Zentral zur Identifikation)
-   - Allg. Adresse: Betreuer Anrede --> Titel (Darstellung des Namens in WebUntis in machen Bereichen sonst unvorteilhaft)
+   - Allg. Adresse: Betreuer Vorname --> Vorname ```(Grunddaten)```
+   - Allg. Adresse: Betreuer Name --> Nachname ```(Grunddaten)```
+   - Interne ID-Nummer --> Schlüssel (intern, Schüler) ```(Zentral zur Identifikation)```
+   - Allg. Adresse: Betreuer Anrede --> Titel ```(Darstellung des Namens in WebUntis in machen Bereichen sonst unvorteilhaft)```
 
 ## Installation und Nutzung
 
