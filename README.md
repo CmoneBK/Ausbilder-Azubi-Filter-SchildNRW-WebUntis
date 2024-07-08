@@ -51,6 +51,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
      - mit allen korrekt ausgefüllten Namensfeldern
      - und dem E-Mail Feld vorkommen.
      - Auch die Anrede wird benötigt (s.u.).
+   
    Wenn Sie die Daten überarbeiten füllen Sie am Besten ALLE Felder. Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zum.
      
 2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
