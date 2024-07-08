@@ -52,10 +52,12 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
      - und dem E-Mail Feld vorkommen.
      - Auch die Anrede wird benötigt (s.u.).
    
-   Wenn Sie die Daten überarbeiten füllen Sie am Besten ALLE Felder. Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zum.
+   Wenn Sie die Daten überarbeiten füllen Sie am Besten ALLE Felder.
+
+    Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zum.
      
-2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
-3. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
+3. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
+4. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
    - Allg. Adresse: Betreuer Titel 
    - Allg. Adresse: Betreuer E-Mail (Wird von WebUntis benötigt)
    - Allg. Adresse: Betreuer Name (Wird von WebUntis benötigt)
@@ -71,8 +73,8 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Klasse               (Wird von der APP Benötigt)
 
    Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell Alle Typen auswählen und die Endung .csv anfügen)
-4. Exportieren Sie eine Datei zum Testen
-5. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
+5. Exportieren Sie eine Datei zum Testen
+6. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
    - Erste Zeile ignorieren: Ja
    - Schülerverbindung additiv importieren: Nein (ein Ja würde dazu führen, dass neue Einträge auf der Blacklist nicht entfernt werden)
    - Identifikation des Ausbildungsbeauftragten: automatisch
