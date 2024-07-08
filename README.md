@@ -119,9 +119,8 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Schülerverbindung additiv importieren: Nein (ein Ja würde dazu führen, dass neue Einträge auf der Blacklist nicht entfernt werden bzw. leere Einträge vorhandene nicht überschreiben)
    - Identifikation des Ausbildungsbeauftragten: automatisch
    
-   Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (sie können dennoch zur automatischen Identifikation einen Nutzen haben).
+   Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (zusätzliche Betreuerdaten helfen bei der automatischen Identifikation des Ausbildungsbeauftragten).
    In jedem Fall benötigt werden:
-   
    - Allg. Adresse: Betreuer Anrede --> Titel ```(Darstellung des Namens in WebUntis in machen Bereichen sonst unvorteilhaft)```
    - Allg. Adresse: Betreuer Vorname --> Vorname ```(Grunddaten)```
    - Allg. Adresse: Betreuer Name --> Nachname ```(Grunddaten)```
