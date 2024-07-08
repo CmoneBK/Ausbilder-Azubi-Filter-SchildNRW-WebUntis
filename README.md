@@ -54,11 +54,11 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    
    Wenn Sie die Daten überarbeiten füllen Sie am Besten ALLE Felder.
 
-    Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zum.
+   Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zu.
      
 3. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
 4. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
-   - Allg. Adresse: Betreuer Titel 
+   - Allg. Adresse: Betreuer Titel (sofern Feld verwendet)
    - Allg. Adresse: Betreuer E-Mail (Wird von WebUntis benötigt)
    - Allg. Adresse: Betreuer Name (Wird von WebUntis benötigt)
    - Allg. Adresse: Betreuer Vorname (Wird von WebUntis benötigt)
@@ -66,7 +66,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Allg. Adresse: Betreuer Anrede (Wird von WebUntis benötigt)
    - Allg. Adresse: Betreuer Telefon (Kann von WebUntis zur Identifikation genutzt werden)
    - Allg. Adresse: Betreuer Abteilung (Kann von WebUntis zur Identifikation genutzt werden)
-   - Allg. Adresse: Name1
+   - Allg. Adresse: Name1 (sofern Feld Verwendet)
    - Interne ID-Nummer    (Wird von der APP und WebUntis Benötigt)
    - Nachname             (Wird von der APP Benötigt)
    - Vorname              (Wird von der APP Benötigt)
