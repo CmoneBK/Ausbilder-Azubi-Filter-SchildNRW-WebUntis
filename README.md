@@ -97,21 +97,21 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
     AND Schueler.AktSchuljahr = 2024
     </pre>
 3. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
-  - Allg. Adresse: Betreuer Anrede ```(Wird von WebUntis zur ordentlichen Darstellung benötigt)```
-  - Allg. Adresse: Betreuer Vorname ```(Wird von WebUntis zur Identifikation benötigt)```
-  - Allg. Adresse: Betreuer Name ```(Wird von WebUntis zur Identifikation benötigt)```
-  - Allg. Adresse: Betreuer E-Mail ```(Wird von WebUntis für den Betreueraccount benötigt)```
-  - Allg. Adresse: Betreuer Titel ```(sofern Feld als Anrede verwendet)```
-  - Allg. Adresse: Betreuer Telefon ```(Kann von WebUntis zur Identifikation genutzt werden)```
-  - Allg. Adresse: Betreuer Abteilung ```(Kann von WebUntis zur Identifikation genutzt werden)```  
-  - Allg. Adresse: Fax-Nr. ```(Kann von WebUntis zur Identifikation genutzt werden)```
-  - Allg. Adresse: Name1 ```(nutzen wir als Betriebname, welcher bei der Übersicht der Daten helfen kann)```
-  - Interne ID-Nummer    ```(Wird von der APP und WebUntis zur Identifikation benötigt)```
-  - Nachname             ```(Wird von der APP Benötigt)```
-  - Vorname              ```(Wird von der APP Benötigt)```
-  - Klasse               ```(Wird von der APP Benötigt)```
+    - Allg. Adresse: Betreuer Anrede ```(Wird von WebUntis zur ordentlichen Darstellung benötigt)```
+    - Allg. Adresse: Betreuer Vorname ```(Wird von WebUntis zur Identifikation benötigt)```
+    - Allg. Adresse: Betreuer Name ```(Wird von WebUntis zur Identifikation benötigt)```
+    - Allg. Adresse: Betreuer E-Mail ```(Wird von WebUntis für den Betreueraccount benötigt)```
+    - Allg. Adresse: Betreuer Titel ```(sofern Feld als Anrede verwendet)```
+    - Allg. Adresse: Betreuer Telefon ```(Kann von WebUntis zur Identifikation genutzt werden)```
+    - Allg. Adresse: Betreuer Abteilung ```(Kann von WebUntis zur Identifikation genutzt werden)```  
+    - Allg. Adresse: Fax-Nr. ```(Kann von WebUntis zur Identifikation genutzt werden)```
+    - Allg. Adresse: Name1 ```(nutzen wir als Betriebname, welcher bei der Übersicht der Daten helfen kann)```
+    - Interne ID-Nummer    ```(Wird von der APP und WebUntis zur Identifikation benötigt)```
+    - Nachname             ```(Wird von der APP Benötigt)```
+    - Vorname              ```(Wird von der APP Benötigt)```
+    - Klasse               ```(Wird von der APP Benötigt)```
 
-   Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell als Dateityp "Alle Dateien (*.*)" auswählen und die Endung .csv anfügen)
+     Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell als Dateityp "Alle Dateien (*.*)" auswählen und die Endung .csv anfügen)
    
 4. Exportieren Sie eine Datei zum Testen
    
