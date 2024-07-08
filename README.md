@@ -120,7 +120,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Identifikation des Ausbildungsbeauftragten: automatisch
    
    Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (zusätzliche Betreuerdaten helfen bei der automatischen Identifikation des Ausbildungsbeauftragten).
-   In jedem Fall benötigt werden:
+   Wesentlich sind dabei:
    - Allg. Adresse: Betreuer Anrede --> Titel ```(Darstellung des Namens in WebUntis in machen Bereichen sonst unvorteilhaft)```
    - Allg. Adresse: Betreuer Vorname --> Vorname ```(Grunddaten)```
    - Allg. Adresse: Betreuer Name --> Nachname ```(Grunddaten)```
