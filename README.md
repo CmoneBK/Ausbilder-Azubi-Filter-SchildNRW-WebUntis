@@ -112,7 +112,9 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
   - Klasse               ```(Wird von der APP Benötigt)```
 
    Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell als Dateityp "Alle Dateien (*.*)" auswählen und die Endung .csv anfügen)
+   
 4. Exportieren Sie eine Datei zum Testen
+   
 5. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
    - Erste Zeile ignorieren: Ja
    - Schülerverbindung additiv importieren: Nein (ein Ja würde dazu führen, dass neue Einträge auf der Blacklist nicht entfernt werden)
