@@ -46,7 +46,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 ## Vor der Installation
 
 1. Sorgen Sie dafür, dass in SchildNRW im Datensatz für Betreuer bei allen im aktuellen Schuljahr Aktiven, Abgägern und Abschlüssen ordentlich gepflegt ist:
-   - Betreuer dürfen bei allen Auszubildenen nur
+   - Betreuer dürfen bei allen exportierten Auszubildenen nur
      - in einer Schreibweise und
      - mit allen korrekt ausgefüllten Namensfeldern
      - und dem E-Mail Feld vorkommen.
