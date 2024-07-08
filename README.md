@@ -122,11 +122,14 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    Ordnen Sie die Felder sinvoll zu und lassen Sie die leer, die Sie nicht brauchen (sie können dennoch zur automatischen Identifikation einen Nutzen haben).
    In jedem Fall benötigt werden:
    
+   - Allg. Adresse: Betreuer Anrede --> Titel ```(Darstellung des Namens in WebUntis in machen Bereichen sonst unvorteilhaft)```
    - Allg. Adresse: Betreuer Vorname --> Vorname ```(Grunddaten)```
    - Allg. Adresse: Betreuer Name --> Nachname ```(Grunddaten)```
+   - Allg. Adresse: Betreuer E-Mail --> E-Mail Adresse ```(Grunddaten)```
+   - Allg. Adresse: Betreuer Telefon --> Mobiltelefon ```(Optional aber nützlich)```
+   - Allg. Adresse: Fax-Nr. --> Telefonnummer ```(Optional aber nützlich)```
    - Interne ID-Nummer --> Schlüssel (intern, Schüler) ```(Zentral zur Identifikation)```
-   - Allg. Adresse: Betreuer Anrede --> Titel ```(Darstellung des Namens in WebUntis in machen Bereichen sonst unvorteilhaft)```
-
+  
 ## Installation und Nutzung
 
 1. **Download und Installation**: Laden Sie die ausführbare Datei (`AusbilderImporter.exe`) herunter und speichern Sie sie in einem Verzeichnis Ihrer Wahl.  [AusbilderImporter.exe herunterladen (Downloadbutton dann oben rechts)](AusbilderImporterFlask/dist/AusbilderImporter.exe)
