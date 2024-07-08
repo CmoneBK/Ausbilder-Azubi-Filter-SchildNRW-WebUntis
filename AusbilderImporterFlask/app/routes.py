@@ -146,7 +146,7 @@ def filter_csv():
     if request.args.get('open_explorer') == 'true':
         subprocess.Popen(f'explorer "{output_dir}"')
     
-    flash("Die CSV Datei wurde gefiltert und im Unterverzeichnis AusbilderImportDatei mit Datums- und Uhrzeitangaben gespeichert!")
+    flash("Die CSV Datei wurde gefiltert und im Unterverzeichnis AusbilderImportDateien mit Datums- und Uhrzeitangaben gespeichert!")
     return redirect(url_for('index'))
 
 @app.route('/upload_file', methods=['GET', 'POST'])
