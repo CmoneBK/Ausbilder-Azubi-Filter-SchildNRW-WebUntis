@@ -49,7 +49,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Betreuer dürfen bei allen exportierten Auszubildenen nur
      - in einer Schreibweise und
      - mit allen korrekt ausgefüllten Namensfeldern
-     - und dem E-Mail Feld vorkommen.
+     - und dem E-Mail Feld vorkommen. Die E-Mail Adresse sollte dabei keine allgemeine Firmenadresse sondern spezifisch die des Betreuers sein.
      - Auch die Anrede wird benötigt (s.u.).
    
    Wenn Sie die Daten überarbeiten füllen Sie am Besten ALLE Felder.
