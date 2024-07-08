@@ -6,7 +6,7 @@ Dieses Programm wurde entwickelt, um Berufskollegs in Nordrhein-Westfalen (NRW) 
 Das Programm hilft dabei, die Verarbeitung und Verteilung dieser Daten mittels Filterung und Blacklisting aufwandtechnisch effizienter und rechtlich sicherer zu gestalten.
 
 ## Disclaimer
-Ich bin kein Anwalt, sondern Lehrkraft und alle hier getätigten rechtlichen Aussagen und Interpretationen sind die vorherrschende Meinung und Interpretation an meinem Berufskolleg. Prüfe Sie dies im Zweifelsfall selbst. Im Folgenden Teil sind dazu hilfreiche Quellen verlinkt.
+Ich bin kein Anwalt, sondern Lehrkraft und alle hier getätigten rechtlichen Aussagen und Interpretationen sind die vorherrschende Meinung und Interpretation an unserem Berufskolleg. Prüfe Sie dies im Zweifelsfall selbst. Im Folgenden Teil sind dazu hilfreiche Quellen verlinkt.
 
 ## Motivation und ursprüngliches Problem
 
