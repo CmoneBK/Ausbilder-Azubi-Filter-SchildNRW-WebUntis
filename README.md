@@ -5,6 +5,9 @@
 Dieses Programm wurde entwickelt, um Berufskollegs in Nordrhein-Westfalen (NRW) zu unterstützen, indem es ermöglicht, Fehlstunden von Auszubildenden gemäß den rechtlichen Anforderungen `der Verordnung über die zur Verarbeitung zugelassenen Daten von Schülerinnen, Schülern und Eltern (VO DVI) und Datenschutz-Grundverordnung (DSGVO)` den Ausbildungsbeauftragten/Ausbildern in WebUntis zur Verfügung zu stellen. 
 Das Programm hilft dabei, die Verarbeitung und Verteilung dieser Daten mittels Filterung und Blacklisting aufwandtechnisch effizienter und rechtlich sicherer zu gestalten.
 
+## Disclaimer
+Ich bin kein Anwalt, sondern Lehrkraft und alle hier getätigten rechtlichen Aussagen und Interpretationen sind die vorherrschende Meinung und Interpretation an meinem Berufskolleg.
+
 ## Motivation und ursprüngliches Problem
 
 In NRW erlaubt die Verordnung über die zur Verarbeitung zugelassenen Daten von Schülerinnen, Schülern und Eltern (VO DVI) zur Kommunikation von Abwesenheitsdaten von Berufskollegs an Ausbilder nur [die Übermittlung unentschuldigter Fehlstunden](https://bass.schul-welt.de/101.htm#:~:text=4.%20Erreichbarkeit%2C-,5.%20Angaben%20zu%20unentschuldigten%20Schulvers%C3%A4umnissen.,-(5)%20Zur%20Organisation).
