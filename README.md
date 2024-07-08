@@ -56,13 +56,22 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
    Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zu.
      
-2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
-  
-  - Beispiel 1 ( Filter Typ I) (sofern letzter Punkt gepflegt):
+2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst. Dabei ist es besonders wichtig Abgägner und Abschlüsse oder ausgetragene Adressen zu erfassen, damit beim späteren Import die Zuweisung zum Ausbilder auch wieder entfernt wird.
+    - Beispiel 1 ( Filter Typ I) (sofern letzter Punkt gepflegt):
   
   Laufbahn-Schuljahr: Aktuelles; Status: Aktiv, Abgang, Abschluss; (Unter Weitere Daten:) Weitere Adressen-Beschäftigungsart: Auszubildener 
 
-  - Beispiel 2 (Filter Typ II (SQL)) (Prüft ob Die Beschäftigungsart Auszubildener ist ODER ein Ausbilder vorhanden ist): 
+  - Beispiel 2 (Filter Typ II (SQL)) : 
+Variante A (Prüft, ob eine Adresse im Reiter Adressen/Betriebe vorhanden ist)
+<pre>
+SELECT Schueler.* FROM Schueler,K_AllgAdresse,Schueler_AllgAdr
+WHERE
+Schueler.Geloescht='-'
+AND (Schueler_AllgAdr.Adresse_ID=K_AllgAdresse.ID AND Schueler.ID=Schueler_AllgAdr.Schueler_ID AND K_AllgAdresse.AllgAdrAdressArt IS NOT NULL)
+AND Schueler.Status IN (2,9,8) 
+AND Schueler.AktSchuljahr = 2024
+</pre> 
+Variante B: (Prüft ob die Beschäftigungsart im Reiter Adressen/Betriebe Auszubildener ist)
 <pre>
 SELECT Schueler.* FROM Schueler,Schueler_AllgAdr
 WHERE
@@ -70,16 +79,22 @@ Schueler.Status IN (2,9,8)
 AND Schueler.Geloescht='-' 
 AND Schueler.AktSchuljahr=2024
 AND (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Vertragsart_ID = 1)
-OR (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Ausbilder IS NOT NULL)
 </pre>
-Auch nützlich aber bei uns nicht funktionierend:
-<pre>SELECT Schueler.* FROM Schueler,Schueler_AllgAdr,K_AllgAdresse
+Variante A und B als ODER kombiniert:
+<pre>
+SELECT Schueler.*
+FROM Schueler
+JOIN Schueler_AllgAdr ON Schueler.ID = Schueler_AllgAdr.Schueler_ID
+LEFT JOIN K_AllgAdresse ON Schueler_AllgAdr.Adresse_ID = K_AllgAdresse.ID
 WHERE
-Schueler.Status IN (2,9,8) 
-AND Schueler.Geloescht='-' 
-AND Schueler.AktSchuljahr=2024
-OR (Schueler_AllgAdr.Adresse_ID=K_AllgAdresse.ID AND Schueler.ID=Schueler_AllgAdr.Schueler_ID AND K_AllgAdresse.AllgAdrAdressArt = 'Betrieb')
-</pre> 
+Schueler.Geloescht = '-'
+AND ((K_AllgAdresse.AllgAdrAdressArt = 'Betrieb') OR(Schueler_AllgAdr.Vertragsart_ID = 1))
+AND Schueler.Status IN (2, 9, 8)
+AND Schueler.AktSchuljahr = 2024
+</pre>
+
+Auch nützlich aber bei uns nicht funktionierend:
+
 3. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
    - Allg. Adresse: Betreuer Titel (sofern Feld verwendet)
    - Allg. Adresse: Betreuer E-Mail (Wird von WebUntis benötigt)
