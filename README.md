@@ -11,7 +11,7 @@ In NRW erlaubt die Verordnung über die zur Verarbeitung zugelassenen Daten von 
 
 [Dies erfolgt auf der rechtlichen Grundlage von DSGVO Artikel 6 Abs. 1 Satz 1 Buchstabe e, Abs. 3 und Artikel 9 Abs. 2 Buchstabe g.](https://bass.schul-welt.de/101.htm#:~:text=Nach%20Artikel%206%20Abs.%201%20Satz%201%20Buchstabe%20e%2C%20Abs.%203%20und%20Artikel%209%20Abs.%202%20Buchstabe%20g)
 
-Für alle anderen Daten, wie entschuldigte Fehlzeiten, ist eine ausdrückliche Zustimmung des Schülers bzw. der Schülerin erforderlich, [gemäß Artikel 6 Buchstabe a oder b der DSGVO](https://dsgvo-gesetz.de/art-6-dsgvo/#:~:text=Die%20betroffene%20Person,betroffenen%20Person%20erfolgen%3B). [Grundsätze der Artikel 5, 6, 7, 9 sind in der BASS zur VO DVI ebenfalls als geltendes Recht erwähnt](https://bass.schul-welt.de/101.htm#:~:text=insbesondere,6%2C%207%2C%209).
+Für alle anderen Daten, wie entschuldigte Fehlzeiten, ist eine ausdrückliche Zustimmung des Schülers bzw. der Schülerin bzw des/der Auszubildenden erforderlich, [gemäß Artikel 6 Buchstabe a oder b der DSGVO](https://dsgvo-gesetz.de/art-6-dsgvo/#:~:text=Die%20betroffene%20Person,betroffenen%20Person%20erfolgen%3B). [Grundsätze der Artikel 5, 6, 7, 9 sind in der BASS zur VO DVI ebenfalls als geltendes Recht erwähnt](https://bass.schul-welt.de/101.htm#:~:text=insbesondere,6%2C%207%2C%209).
 
 
 
