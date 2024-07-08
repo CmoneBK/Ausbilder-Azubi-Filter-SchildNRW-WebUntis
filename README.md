@@ -64,6 +64,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
     Laufbahn-Schuljahr: Aktuelles; Status: Aktiv, Abgang, Abschluss; (Unter Weitere Daten:) Weitere Adressen-Beschäftigungsart: Auszubildener 
   
     - Beispiel 2 (Filter Typ II (SQL)):
+      
         [Variante A](Begleitdateien/Alle_aus_2425_in_Betrieben_A.sql) (Prüft, ob eine Adresse im Reiter Adressen/Betriebe vorhanden ist) 
         <pre>
         SELECT Schueler.* FROM Schueler,K_AllgAdresse,Schueler_AllgAdr
