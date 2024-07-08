@@ -2,7 +2,7 @@
 
 ## Einführung
 
-Dieses Programm wurde entwickelt, um Berufskollegs in Nordrhein-Westfalen (NRW) zu unterstützen, indem es ermöglicht, Fehlstunden von Auszubildenden gemäß den rechtlichen Anforderungen der `Verordnung über die zur Verarbeitung zugelassenen Daten von Schülerinnen, Schülern und Eltern (VO DVI) und Datenschutz-Grundverordnung (DSGVO)` den Ausbildungsbeauftragten/Ausbildern in WebUntis zur Verfügung zu stellen. 
+Dieses Programm wurde entwickelt, um Berufskollegs in Nordrhein-Westfalen (NRW) zu unterstützen, indem es ermöglicht, Fehlstunden von Auszubildenden gemäß den rechtlichen Anforderungen `der Verordnung über die zur Verarbeitung zugelassenen Daten von Schülerinnen, Schülern und Eltern (VO DVI) und Datenschutz-Grundverordnung (DSGVO)` den Ausbildungsbeauftragten/Ausbildern in WebUntis zur Verfügung zu stellen. 
 Das Programm hilft dabei, die Verarbeitung und Verteilung dieser Daten mittels Filterung und Blacklisting aufwandtechnisch effizienter und rechtlich sicherer zu gestalten.
 
 ## Motivation und ursprüngliches Problem
