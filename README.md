@@ -56,7 +56,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
    Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zu.
      
-3. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
+2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
   
   - Beispiel 1 ( Filter Typ I) (sofern letzter Punkt gepflegt):
   
@@ -72,7 +72,10 @@ AND Schueler.AktSchuljahr=2024
 AND (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Vertragsart_ID = 1)
 OR (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Ausbilder IS NOT NULL)
 </pre>
-5. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
+K_AllgAdresse
+OR (Schueler_AllgAdr.Adresse_ID=K_AllgAdresse.ID AND Schueler.ID=Schueler_AllgAdr.Schueler_ID AND K_AllgAdresse.AllgAdrAdressArt = 'Betrieb')
+
+3. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
    - Allg. Adresse: Betreuer Titel (sofern Feld verwendet)
    - Allg. Adresse: Betreuer E-Mail (Wird von WebUntis benötigt)
    - Allg. Adresse: Betreuer Name (Wird von WebUntis benötigt)
@@ -87,9 +90,9 @@ OR (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Ausbilder IS N
    - Vorname              (Wird von der APP Benötigt)
    - Klasse               (Wird von der APP Benötigt)
 
-   Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell Alle Typen auswählen und die Endung .csv anfügen)
-6. Exportieren Sie eine Datei zum Testen
-7. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
+   Die Vorlage muss so konfiguriert sein, dass sie als Dateityp eine .csv Datei ausgibt (manuell als Dateityp "Alle Dateien (*.*)" auswählen und die Endung .csv anfügen)
+4. Exportieren Sie eine Datei zum Testen
+5. Erstellen Sie in WebUntis eine Import Vorlage für Ausbildungsbeauftragte mit folgenden Einstellungen:
    - Erste Zeile ignorieren: Ja
    - Schülerverbindung additiv importieren: Nein (ein Ja würde dazu führen, dass neue Einträge auf der Blacklist nicht entfernt werden)
    - Identifikation des Ausbildungsbeauftragten: automatisch
