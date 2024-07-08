@@ -72,9 +72,14 @@ AND Schueler.AktSchuljahr=2024
 AND (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Vertragsart_ID = 1)
 OR (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Ausbilder IS NOT NULL)
 </pre>
-K_AllgAdresse
+Auch nützlich aber bei uns nicht funktionierend:
+<pre>SELECT Schueler.* FROM Schueler,Schueler_AllgAdr,K_AllgAdresse
+WHERE
+Schueler.Status IN (2,9,8) 
+AND Schueler.Geloescht='-' 
+AND Schueler.AktSchuljahr=2024
 OR (Schueler_AllgAdr.Adresse_ID=K_AllgAdresse.ID AND Schueler.ID=Schueler_AllgAdr.Schueler_ID AND K_AllgAdresse.AllgAdrAdressArt = 'Betrieb')
-
+</pre> 
 3. Erstellen Sie in SchildNRW eine Dateiexportvorlage, die folgende Daten umfasst:
    - Allg. Adresse: Betreuer Titel (sofern Feld verwendet)
    - Allg. Adresse: Betreuer E-Mail (Wird von WebUntis benötigt)
