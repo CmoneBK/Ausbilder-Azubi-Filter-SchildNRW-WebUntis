@@ -29,7 +29,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
 Übrigens: Selbst wenn ausschließlich unentschuldigte Daten sichtbar wären oder wiederholt übertragen würden könnte man durch den dauerhaften bzw. wiederholten Zugriff im Nachhinein Entschuldigte identifizieren, was nach VO DVI ebenfalls nicht zulässig wäre.
 
-*In SchildNRW gibt es die Checkbox " ". Wenn Sie diese auch in der Vergangenheit nie genutzt haben (Datenkonsistenz), nutzen Sie diese gerne hierfür. Sie brauchen hier dann nicht mehr weiterlesen. Wenn Sie oder Ihr Sekretariat diese Checkbox jedoch jemals für etwas anderes genutzt haben sind Sie in der selben Situation wie der Ersteller dieses Programms :). 
+*In SchildNRW gibt es die Checkbox "```DV-Einwilligung vorh.```". Wenn Sie diese auch in der Vergangenheit nie genutzt haben (Datenkonsistenz), nutzen Sie diese gerne hierfür. Sie brauchen hier dann nicht mehr weiterlesen. Wenn Sie oder Ihr Sekretariat diese Checkbox jedoch jemals für etwas anderes genutzt haben sind Sie in der selben Situation wie der Ersteller dieses Programms :). 
 
 ## Vorraussetzungen zur Verwendung des Programms
 - Sie Nutzen die Interne-ID zur Schülerdidentifikation in SchildNRW
