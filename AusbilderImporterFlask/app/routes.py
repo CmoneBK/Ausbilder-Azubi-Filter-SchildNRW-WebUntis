@@ -139,7 +139,7 @@ def filter_csv():
         return redirect(url_for('index'))
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_dir = os.path.join(os.getcwd(), 'AusbilderImportDatei')
+    output_dir = os.path.join(os.getcwd(), 'AusbilderImportDateien')
     output_path = os.path.join(output_dir, f'WebUntis_Ausbilder_Import_{timestamp}.csv')
     filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_path)
     
