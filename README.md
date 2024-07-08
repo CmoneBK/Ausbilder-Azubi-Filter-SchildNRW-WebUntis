@@ -42,18 +42,18 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 - **Klassenfilter**: Begrenzen des Imports auf bestimmte Klassen.
 - **CSV-Export**: Exportieren der gefilterten Daten in eine neue CSV-Datei mit Datums- und Uhrzeitangaben im Dateinamen.
 
-## Vor der Installation
+## Vor der Installation 
 
-1. Sorgen Sie dafür, dass in SchildNRW im Datensatz für Betreuer bei allen im aktuellen Schuljahr Aktiven, Abgägern und Abschlüssen ordentlich gepflegt ist:
+1. Sorgen Sie dafür, dass in SchildNRW im Datensatz für Betreuer bei allen im aktuellen Schuljahr Aktiven, Abgägern und Abschlüssen ordentlich gepflegt ist (Vorraussetzungen für den sicheren AusbilderImport in WebUntis):
    - Betreuer dürfen bei allen exportierten Auszubildenen nur
-     - in einer Schreibweise und
-     - mit allen korrekt ausgefüllten Namensfeldern
+     - in einer Schreibweise (Vorname, Nachname, E-Mail Adrese,...) und
+     - mit allen Namensfeldern vorhanden und korrekt ausgefüllt 
      - und dem E-Mail Feld vorkommen. Die E-Mail Adresse sollte dabei keine allgemeine Firmenadresse sondern spezifisch die des Betreuers sein.
      - Auch die Anrede wird benötigt (s.u.).
    
    Wenn Sie die Daten überarbeiten füllen Sie am Besten ALLE Felder.
 
-   Tipp: Ordnen Sie dabei einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zu.
+   Tipp: Ordnen Sie dabei in SchildNRW einen fertig aufbereitetenen Betreuer immer allen betreuten Auszubildenden zu.
      
 2. Erstellen Sie in SchildNRW einen Filter, der zuverlässig ALLE im Schuljahr Auszubildenden (Aktiv, Abgang & Abschluss) erfasst.
 
