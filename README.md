@@ -16,11 +16,10 @@ In NRW erlaubt die Verordnung über die zur Verarbeitung zugelassenen Daten von 
 
 Für alle anderen Daten, wie entschuldigte Fehlzeiten, ist eine ausdrückliche Zustimmung des Schülers bzw. der Schülerin bzw. des/der Auszubildenden erforderlich, [gemäß Artikel 6 Buchstabe a oder b der DSGVO](https://dsgvo-gesetz.de/art-6-dsgvo/#:~:text=Die%20betroffene%20Person,betroffenen%20Person%20erfolgen%3B). [Grundsätze der Artikel 5, 6, 7, 9 sind in der BASS zur VO DVI ebenfalls als geltendes Recht erwähnt](https://bass.schul-welt.de/101.htm#:~:text=insbesondere,6%2C%207%2C%209).
 
-
-
 Probleme entstehen, weil 
 - WebUntis (Stand 08.07.2024) zur Anzeige von Fehlzeiten für Ausbildungsbeauftragte derzeit nicht zwischen unentschuldigten und entschuldigten Fehlzeiten unterscheidet und
 - die Ausbilder über die Schülerstammdaten mittels Abgleich der Ausbilderdaten importiert und zugeordnet werden.
+
 Dadurch erhalten Ausbilder zwangsläufig permanenten Zugriff auf die Abwesenheitsdaten aller ihnen so zuogeordneten Schülerinnnen und Schüler im Datensatz, auch wenn nicht alle Schüler zugestimmt haben. 
 Dies führt zu einem Datenschutzproblem.
 
