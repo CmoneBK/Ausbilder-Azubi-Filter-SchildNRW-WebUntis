@@ -64,8 +64,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
     Laufbahn-Schuljahr: Aktuelles; Status: Aktiv, Abgang, Abschluss; (Unter Weitere Daten:) Weitere Adressen-Beschäftigungsart: Auszubildener 
   
     - Beispiel 2 (Filter Typ II (SQL)):
-
-        Variante A: (Prüft, ob eine Adresse im Reiter Adressen/Betriebe vorhanden ist)
+        [Variante A](Begleitdateien/Alle_aus_2425_in_Betrieben_A.sql) (Prüft, ob eine Adresse im Reiter Adressen/Betriebe vorhanden ist) 
         <pre>
         SELECT Schueler.* FROM Schueler,K_AllgAdresse,Schueler_AllgAdr
         WHERE
@@ -74,7 +73,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
         AND Schueler.Status IN (2,9,8) 
         AND Schueler.AktSchuljahr = 2024
         </pre> 
-        Variante B: (Prüft ob die Beschäftigungsart im Reiter Adressen/Betriebe Auszubildener ist)
+        [Variante B:](Begleitdateien/Alle_aus_2425_in_Betrieben_B.sql) (Prüft ob die Beschäftigungsart im Reiter Adressen/Betriebe Auszubildener ist)
         <pre>
         SELECT Schueler.* FROM Schueler,Schueler_AllgAdr
         WHERE
@@ -83,7 +82,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
         AND Schueler.AktSchuljahr=2024
         AND (Schueler.ID=Schueler_AllgAdr.Schueler_ID AND Schueler_AllgAdr.Vertragsart_ID = 1)
         </pre>
-        Variante A und B als ODER kombiniert:
+        [Variante A und B als ODER kombiniert](Begleitdateien/Alle_aus_2425_in_Betrieben_A-B.sql):
         <pre>
         SELECT Schueler.*
         FROM Schueler
