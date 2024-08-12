@@ -28,19 +28,43 @@ def read_ini_file(ini_path):
 
     classes = config['FILTER']['Classes'].split(',') if config['FILTER']['Classes'] else []
     blacklist = [str(id).strip() for id in config['BLACKLIST']['IDs'].split(',')] if 'BLACKLIST' in config and 'IDs' in config['BLACKLIST'] and config['BLACKLIST']['IDs'] else []
+    input_path = config['CSV']['InputPath'] if 'CSV' in config and 'InputPath' in config['CSV'] else os.getcwd()
+
     logging.debug(f"Read classes: {classes}")
     logging.debug(f"Read blacklist: {blacklist}")
-    return classes, blacklist
+    logging.debug(f"Read input path: {input_path}")
+    
+    return classes, blacklist, input_path
 
-def write_ini_file(ini_path, classes, blacklist):
+def write_ini_file(ini_path, classes, blacklist, input_path=None):
     logging.debug(f"Writing INI file to {ini_path}")
+    
+    # Erstelle ein ConfigParser-Objekt und lese die bestehende ini-Datei (falls vorhanden)
     config = configparser.ConfigParser()
+    if os.path.exists(ini_path):
+        config.read(ini_path)
+
+    # Füge die FILTER-Sektion hinzu oder aktualisiere sie
     config['FILTER'] = {'Classes': ','.join(classes)}
+
+    # Füge die BLACKLIST-Sektion hinzu oder aktualisiere sie
     config['BLACKLIST'] = {'IDs': ','.join(blacklist)}
+
+    # Füge die CSV-Sektion immer hinzu, ohne Bedingung
+    config['CSV'] = {}
+    if input_path:
+        config['CSV']['InputPath'] = input_path
+    else:
+        config['CSV']['InputPath'] = ''  # Initialisiere InputPath leer
+    
+    # Schreibe die aktualisierte Konfiguration in die ini-Datei zurück
     with open(ini_path, 'w') as configfile:
         config.write(configfile)
+    
     logging.debug(f"Wrote classes: {classes}")
     logging.debug(f"Wrote blacklist: {blacklist}")
+    logging.debug(f"Wrote input path: {input_path if input_path else 'Not updated'}")
+
 
 def get_latest_csv(directory):
     logging.debug(f"Searching for CSV files in {directory}")
@@ -79,8 +103,14 @@ def filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_pat
 def index():
     logging.debug("Index route accessed")
     ini_path = os.path.join(os.getcwd(), 'config.ini')
-    classes, blacklist = read_ini_file(ini_path)
-    csv_path = get_latest_csv(os.getcwd()) or session.get('uploaded_csv')  # Suche nach CSV-Dateien im aktuellen Verzeichnis oder Upload-Verzeichnis
+
+    # Check if the config.ini file exists, if not create it
+    if not os.path.exists(ini_path):
+        logging.debug("config.ini not found, creating a new one")
+        write_ini_file(ini_path, [], [], None)  # Create config.ini with empty classes, blacklist, and CSV section
+
+    classes, blacklist, input_path = read_ini_file(ini_path)
+    csv_path = get_latest_csv(input_path) or session.get('uploaded_csv')  # Suche nach CSV-Dateien im angegebenen Verzeichnis oder Upload-Verzeichnis
 
     students = []
     if csv_path:
@@ -100,7 +130,13 @@ def update_ini():
     ini_path = os.path.join(os.getcwd(), 'config.ini')
     new_classes = request.form.get('classes').split(',')
     new_blacklist = request.form.get('blacklist').split(',')
-    write_ini_file(ini_path, new_classes, new_blacklist)
+
+    # Read the existing config to retain the input path
+    config = configparser.ConfigParser()
+    config.read(ini_path)
+    input_path = config['CSV']['InputPath'] if 'CSV' in config and 'InputPath' in config['CSV'] else None
+
+    write_ini_file(ini_path, new_classes, new_blacklist, input_path)
     cache.clear()
     return redirect(url_for('index'))
 
@@ -109,10 +145,11 @@ def add_to_blacklist():
     logging.debug("Add to blacklist route accessed")
     ini_path = os.path.join(os.getcwd(), 'config.ini')
     student_id = request.form.get('student_id')
-    classes, blacklist = read_ini_file(ini_path)
+    classes, blacklist, input_path = read_ini_file(ini_path)  # Read the input path
+
     if student_id not in blacklist:
         blacklist.append(student_id)
-    write_ini_file(ini_path, classes, blacklist)
+    write_ini_file(ini_path, classes, blacklist, input_path)  # Ensure input_path is passed
     cache.clear()
     return jsonify({'status': 'success', 'action': 'added', 'student_id': student_id, 'blacklist': blacklist})
 
@@ -121,28 +158,37 @@ def remove_from_blacklist():
     logging.debug("Remove from blacklist route accessed")
     ini_path = os.path.join(os.getcwd(), 'config.ini')
     student_id = request.form.get('student_id')
-    classes, blacklist = read_ini_file(ini_path)
+    classes, blacklist, input_path = read_ini_file(ini_path)  # Read the input path
+
     if student_id in blacklist:
         blacklist.remove(student_id)
-    write_ini_file(ini_path, classes, blacklist)
+    write_ini_file(ini_path, classes, blacklist, input_path)  # Ensure input_path is passed
     cache.clear()
     return jsonify({'status': 'success', 'action': 'removed', 'student_id': student_id, 'blacklist': blacklist})
+
 
 @app.route('/filter_csv')
 def filter_csv():
     logging.debug("Filter CSV route accessed")
     ini_path = os.path.join(os.getcwd(), 'config.ini')
-    classes, blacklist = read_ini_file(ini_path)
-    csv_path = get_latest_csv(os.getcwd()) or session.get('uploaded_csv')
+    classes, blacklist, input_path = read_ini_file(ini_path)
+
+    # Suchen Sie die neueste CSV-Datei im angegebenen Verzeichnis oder im Upload-Verzeichnis
+    csv_path = get_latest_csv(input_path) or session.get('uploaded_csv')
+    
     if not csv_path:
         flash("Keine CSV Datei gefunden. Bitte laden Sie eine CSV-Datei hoch.")
         return redirect(url_for('index'))
 
+    # Generieren Sie einen Zeitstempel für den Dateinamen
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = os.path.join(os.getcwd(), 'AusbilderImportDateien')
     output_path = os.path.join(output_dir, f'WebUntis_Ausbilder_Import_{timestamp}.csv')
+
+    # CSV-Datei filtern
     filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_path)
     
+    # Option zum Öffnen des Ausgabeordners im Explorer
     if request.args.get('open_explorer') == 'true':
         subprocess.Popen(f'explorer "{output_dir}"')
     
@@ -161,10 +207,17 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
+            
+            # Speichern der Datei im Upload-Verzeichnis
             file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(file_path)
-            flash('Datei erfolgreich hochgeladen')
-            # Store the uploaded file path in session
+            
+            # Speichern des hochgeladenen Dateipfads in der Session
             session['uploaded_csv'] = file_path
+            
+            flash('Datei erfolgreich hochgeladen')
             return redirect(url_for('index'))
     return render_template('upload.html')
+
+
+
