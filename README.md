@@ -131,11 +131,12 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
   
 ## Installation und Nutzung
 
-1. **Download und Installation**: Laden Sie die ausführbare Datei (`AusbilderImporter.exe`) herunter und speichern Sie sie in einem Verzeichnis Ihrer Wahl.  [AusbilderImporter.exe herunterladen (Downloadbutton dann oben rechts)](AusbilderImporterFlask/dist/AusbilderImporter.exe)
+1. **Download und Installation**: Laden Sie die ausführbare Datei (`Ausbilder-Azubi-Filter-SchildNRW-WebUntis.exe`) herunter und speichern Sie sie in einem Verzeichnis Ihrer Wahl.  [Ausbilder-Azubi-Filter-SchildNRW-WebUntis.exe herunterladen (Downloadbutton dann oben rechts)](AusbilderImporterFlask/dist/Ausbilder-Azubi-Filter-SchildNRW-WebUntis.exe)
 2. **Starten der Anwendung**: Doppelklicken Sie auf `AusbilderImporter.exe`. Die Anwendung erstellt automatisch eine `config.ini`-Datei, falls diese nicht vorhanden ist, und öffnet die Webanwendung im Standardbrowser. Löschen oder Verschieben Sie diese config.ini nicht. Sie enthält und behält den Filter, den Sie aufsetzen.
 3. **CSV-Datei hochladen**: Laden Sie über die Weboberfläche eine CSV-Datei hoch, die die Schüler- und Ausbilderdaten enthält.
 4. **Konfigurieren der Klassen und Blacklist**: Verwenden Sie die Weboberfläche, um Klassen festzulegen und Schüler auf die Blacklist zu setzen. (Keine Klassen = Kein Klassenfilter)
 5. **CSV-Datei filtern**: Klicken Sie auf den Button "CSV-Datei filtern und ausgeben", um die gefilterten Daten zu exportieren. Sie werden im Unterverzeichnis AusbilderImportDateien gespeichert.
+6. **Optional: CSV-Verzeichnis**: Geben Sie in der config.ini ein Verzeichnis an, in welchem das Programm zukünftig nach einer Importdatei suchen soll. Es darf dabei immer nur die zu importierende .csv Datei in diesem Verzeichnis sein.
 
 ## Beispielhafte `config.ini`
 
