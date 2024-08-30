@@ -33,7 +33,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
 
 ## Vorraussetzungen zur Verwendung des Programms
 - Sie Nutzen die Interne-ID zur Schülerdidentifikation in SchildNRW
-- Sie Nutzen den Schlüssel (intern) Zur Schüleridentifikation in WebUntis
+- Sie Nutzen den Schlüssel (extern) Zur Schüleridentifikation in WebUntis
   
 ## Grundfunktionen
 
@@ -127,7 +127,7 @@ Das Programm bietet eine Lösung für dieses Problem, indem es ermöglicht, Sch�
    - Allg. Adresse: Betreuer E-Mail --> E-Mail Adresse ```(Grunddaten)```
    - Allg. Adresse: Betreuer Telefon --> Mobiltelefon ```(Optional aber nützlich)```
    - Allg. Adresse: Fax-Nr. --> Telefonnummer ```(Optional aber nützlich)```
-   - Interne ID-Nummer --> Schlüssel (intern, Schüler) ```(Zentral zur Identifikation)```
+   - Interne ID-Nummer --> Schlüssel (extern, Schüler) ```(Zentral zur Identifikation)```
   
 ## Installation und Nutzung
 
