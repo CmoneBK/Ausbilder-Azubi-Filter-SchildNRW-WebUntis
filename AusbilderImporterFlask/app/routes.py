@@ -44,20 +44,20 @@ def write_ini_file(ini_path, classes, blacklist, input_path=None):
     if os.path.exists(ini_path):
         config.read(ini_path)
 
-    # F�ge die FILTER-Sektion hinzu oder aktualisiere sie
+    # Fuege die FILTER-Sektion hinzu oder aktualisiere sie
     config['FILTER'] = {'Classes': ','.join(classes)}
 
-    # F�ge die BLACKLIST-Sektion hinzu oder aktualisiere sie
+    # Fuege die BLACKLIST-Sektion hinzu oder aktualisiere sie
     config['BLACKLIST'] = {'IDs': ','.join(blacklist)}
 
-    # F�ge die CSV-Sektion immer hinzu, ohne Bedingung
+    # Fuege die CSV-Sektion immer hinzu, ohne Bedingung
     config['CSV'] = {}
     if input_path:
         config['CSV']['InputPath'] = input_path
     else:
         config['CSV']['InputPath'] = ''  # Initialisiere InputPath leer
-    
-    # Schreibe die aktualisierte Konfiguration in die ini-Datei zur�ck
+
+    # Schreibe die aktualisierte Konfiguration in die ini-Datei zurueck
     with open(ini_path, 'w') as configfile:
         config.write(configfile)
     
@@ -180,7 +180,7 @@ def filter_csv():
         flash("Keine CSV Datei gefunden. Bitte laden Sie eine CSV-Datei hoch.")
         return redirect(url_for('index'))
 
-    # Generieren Sie einen Zeitstempel f�r den Dateinamen
+    # Generieren Sie einen Zeitstempel fuer den Dateinamen
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_dir = os.path.join(os.getcwd(), 'AusbilderImportDateien')
     output_path = os.path.join(output_dir, f'WebUntis_Ausbilder_Import_{timestamp}.csv')
@@ -188,7 +188,7 @@ def filter_csv():
     # CSV-Datei filtern
     filter_csv_by_classes_and_blacklist(csv_path, classes, blacklist, output_path)
     
-    # Option zum �ffnen des Ausgabeordners im Explorer
+    # Option zum Oeffnen des Ausgabeordners im Explorer
     if request.args.get('open_explorer') == 'true':
         subprocess.Popen(f'explorer "{output_dir}"')
     

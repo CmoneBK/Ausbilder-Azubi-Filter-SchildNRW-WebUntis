@@ -33,7 +33,7 @@ def create_default_ini_file(ini_path):
     config = configparser.ConfigParser()
     config['FILTER'] = {'Classes': ''}
     config['BLACKLIST'] = {'IDs': ''}
-    config['CSV'] = {'InputPath': ''}  # Füge die CSV-Sektion hinzu
+    config['CSV'] = {'InputPath': ''}  # Fuege die CSV-Sektion hinzu
     with open(ini_path, 'w') as configfile:
         config.write(configfile)
 

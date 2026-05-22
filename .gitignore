@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+AusbilderImporterFlask/dist/AusbilderImportDateien/_test_roundtrip.csv
+AusbilderImporterFlask/dist/AusbilderImportDateien/WebUntis_Ausbilder_Import_20240928_102828.csv
+AusbilderImporterFlask/dist/AusbilderImportDateien/WebUntis_Ausbilder_Import_20240928_102902.csv
+AusbilderImporterFlask/dist/uploads/AusbilderExport3.csv
+
