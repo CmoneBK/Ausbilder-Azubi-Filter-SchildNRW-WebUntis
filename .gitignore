@@ -316,6 +316,16 @@ paket-files/
 __pycache__/
 *.pyc
 
+# Python virtual environments
+envAusbilderImporter/
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+pip-log.txt
+pip-delete-this-directory.txt
+
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config
